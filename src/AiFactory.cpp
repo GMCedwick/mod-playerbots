@@ -45,9 +45,9 @@ AiObjectContext* AiFactory::createAiObjectContext(Player* player, PlayerbotAI* b
             return new RogueAiObjectContext(botAI);
         case CLASS_DEATH_KNIGHT:
             return new DKAiObjectContext(botAI);
+        default:
+            return new AiObjectContext(botAI); // default case
     }
-
-    return new AiObjectContext(botAI);
 }
 
 uint8 AiFactory::GetPlayerSpecTab(Player* bot)
